@@ -51,6 +51,11 @@ class BST:
                 else:
                     return "Found"
 
+    def lowestCommonAncestor(self, root: 'Node', p: 'Node', q: 'Node') -> 'Node':
+        while (root.data - p.data) * (root.data - q.data) > 0:
+            root = (root.left, root.right)[p.data > root.data]
+        return root
+
 tree = BST()
 tree.insert_node(10)
 tree.insert_node(5)
@@ -68,3 +73,5 @@ print(tree.search_node(20))
 print(tree.search_node(7))
 print(tree.search_node(12))
 print(tree.search_node(15))
+
+print(tree.lowestCommonAncestor(tree.root, tree.root.left, tree.root.right).data)
