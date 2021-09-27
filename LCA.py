@@ -71,26 +71,36 @@ class BST:
         return False
 
 tree = BST()
-tree.insert_node(10)
-tree.insert_node(5)
-tree.insert_node(20)
-tree.insert_node(7)
 
-print(tree.root.data)
-print(tree.root.left.data)
-print(tree.root.right.data)
-print(tree.root.left.right.data)
+done = False
 
-print(tree.search_node(10))
-print(tree.search_node(5))
-print(tree.search_node(20))
-print(tree.search_node(7))
-print(tree.search_node(12))
-print(tree.search_node(15))
+while done == False :
+    user = input("Enter a value to add to bst or 'lca': ")
+    if(user != "lca"):
+        tree.insert_node(int(user))
+    else:
+        value1 = int(input("Enter the first value: "))
+        value2 = int(input("Enter the second value: "))
+        node1 = tree.search(value1)
+        node2 = tree.search(value2)
+        print("The lowest common ancestor of these values is: " )
+        print(tree.lowestCommonAncestor(tree.root, node1, node2).data)
+        done = True
+
+
+
+""" tree.insert_node(7)
+tree.insert_node(3)
+tree.insert_node(8)
+tree.insert_node(12)
+tree.insert_node(1)
+tree.insert_node(9)
+tree.insert_node(4)
+tree.insert_node(6)
 
 value1 = int(input("Enter the first value: "))
 value2 = int(input("Enter the second value: "))
 node1 = tree.search(value1)
 node2 = tree.search(value2)
-print(tree.lowestCommonAncestor(tree.root, node1, node2).data)
+print(tree.lowestCommonAncestor(tree.root, node1, node2).data) """
 
