@@ -56,6 +56,20 @@ class BST:
             root = (root.left, root.right)[p.data > root.data]
         return root
 
+    def search(self, value):
+        """
+        Value will be to the left of node if node > value; right otherwise.
+        """
+        node = self.root
+        while node is not None:
+            if node.data == value:
+                return node    # node.value
+            if node.data > value:
+                node = node.left
+            else:
+                node = node.right
+        return False
+
 tree = BST()
 tree.insert_node(10)
 tree.insert_node(5)
@@ -74,4 +88,6 @@ print(tree.search_node(7))
 print(tree.search_node(12))
 print(tree.search_node(15))
 
-print(tree.lowestCommonAncestor(tree.root, tree.root.left, tree.root.right).data)
+node1 = tree.search(7)
+node2 = tree.search(20)
+print(tree.lowestCommonAncestor(tree.root, node1, node2).data)
