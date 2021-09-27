@@ -88,6 +88,9 @@ print(tree.search_node(7))
 print(tree.search_node(12))
 print(tree.search_node(15))
 
-node1 = tree.search(7)
-node2 = tree.search(20)
+value1 = int(input("Enter the first value: "))
+value2 = int(input("Enter the second value: "))
+node1 = tree.search(value1)
+node2 = tree.search(value2)
 print(tree.lowestCommonAncestor(tree.root, node1, node2).data)
+
