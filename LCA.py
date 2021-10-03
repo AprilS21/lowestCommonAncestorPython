@@ -70,7 +70,7 @@ class BST:
                 node = node.right
         return False
 
-tree = BST()
+""" tree = BST()
 
 done = False
 
@@ -85,7 +85,7 @@ while done == False :
         node2 = tree.search(value2)
         print("The lowest common ancestor of these values is: " )
         print(tree.lowestCommonAncestor(tree.root, node1, node2).data)
-        done = True
+        done = True """
 
 
 
