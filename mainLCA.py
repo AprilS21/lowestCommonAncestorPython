@@ -12,6 +12,10 @@ while done == False :
         value2 = int(input("Enter the second value: "))
         node1 = tree.search(value1)
         node2 = tree.search(value2)
-        print("The lowest common ancestor of these values is: " )
-        print(tree.lowestCommonAncestor(tree.root, node1, node2).data)
-        done = True
+        if(node1 == False or node2 ==False):
+            print("LCA does not exist for these two values")
+            done = True
+        else:
+            print("The lowest common ancestor of these values is: " )
+            print(tree.lowestCommonAncestor(tree.root, node1, node2).data)
+            done = True
